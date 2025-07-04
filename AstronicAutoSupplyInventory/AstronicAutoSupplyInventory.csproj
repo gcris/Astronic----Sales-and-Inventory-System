@@ -1,0 +1,1486 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3F7F230D-0E82-481B-8198-0925752A05C9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AstronicAutoSupplyInventory</RootNamespace>
+    <AssemblyName>AstronicAutoSupplyInventory</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>\\server-pc\installer\publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <InstallUrl>\\server-pc\installer\publish\</InstallUrl>
+    <UpdateUrl>\\server-pc\installer\publish\</UpdateUrl>
+    <ProductName>AASI</ProductName>
+    <PublisherName>Gerry-Khrist</PublisherName>
+    <SuiteName>Gerry-Khrist</SuiteName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>inventory_yvh_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>1665D92EC452DAD09117188BDD0F6E8761D288BA</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics4.Shared.v19.1, Version=19.1.20191.82, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Win.DataVisualization.Shared.v19.1, Version=19.1.20191.82, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Win.DataVisualization.UltraDataChart.v19.1, Version=19.1.20191.82, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.Misc.v19.1, Version=19.1.20191.82, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.Portable.Core.v19.1, Version=19.1.20191.82, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Infragistics4.Win.UltraWinChart.v19.1, Version=19.1.20191.82, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinEditors.v19.1, Version=19.1.20191.82, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinTabbedMdi.v19.1, Version=19.1.20191.82, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.v19.1, Version=19.1.20191.82, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WinForms.10.0.40219.1\lib\Microsoft.ReportViewer.WinForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Web.Services">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Categories\AddEditCategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Categories\AddEditCategoryForm.Designer.cs">
+      <DependentUpon>AddEditCategoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Categories\CategoryListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Categories\CategoryListForm.Designer.cs">
+      <DependentUpon>CategoryListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\AddEditCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\AddEditCustomerForm.Designer.cs">
+      <DependentUpon>AddEditCustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\CustomerListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerListForm.Designer.cs">
+      <DependentUpon>CustomerListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventMesseging\AddNewEventMessenger.cs" />
+    <Compile Include="EventMesseging\ConfirmDataRangeEventMessenger.cs" />
+    <Compile Include="EventMesseging\ConfirmSalesItemsToReturnEventMessenger.cs" />
+    <Compile Include="EventMesseging\ConfirmORNumberEventMessenger.cs" />
+    <Compile Include="EventMesseging\ConfirmPurchaseItemsToReturnEventMessenger.cs" />
+    <Compile Include="EventMesseging\ConfirmRemarksEventMessenger.cs" />
+    <Compile Include="EventMesseging\ConfirmSearchItemEventMessenger.cs" />
+    <Compile Include="EventMesseging\LogInUserEventMessenger.cs" />
+    <Compile Include="EventMesseging\ProcessCmdEventMessenger.cs" />
+    <Compile Include="EventMesseging\ProcessCmdKeyEventMessenger.cs" />
+    <Compile Include="EventMesseging\SearchKeyEventMessenger.cs" />
+    <Compile Include="EventMesseging\SelectCategoryOrSupplierEventMessenger.cs" />
+    <Compile Include="Items\AddEditItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Items\AddEditItemForm.Designer.cs">
+      <DependentUpon>AddEditItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Items\ChangePriceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Items\ChangePriceForm.Designer.cs">
+      <DependentUpon>ChangePriceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Items\ChangePriceHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Items\ChangePriceHistoryForm.Designer.cs">
+      <DependentUpon>ChangePriceHistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Items\ItemTransactionHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Items\ItemTransactionHistoryForm.Designer.cs">
+      <DependentUpon>ItemTransactionHistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Items\ItemListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Items\ItemListForm.Designer.cs">
+      <DependentUpon>ItemListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Items\UpdateMinimumStockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Items\UpdateMinimumStockForm.Designer.cs">
+      <DependentUpon>UpdateMinimumStockForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shared\DashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shared\DashboardForm.Designer.cs">
+      <DependentUpon>DashboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\DatabaseServerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shared\DatabaseServerForm.Designer.cs">
+      <DependentUpon>DatabaseServerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\DateRangeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shared\DateRangeForm.Designer.cs">
+      <DependentUpon>DateRangeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\FrequencyGraphUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shared\FrequencyGraphUI.Designer.cs">
+      <DependentUpon>FrequencyGraphUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\IndexForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shared\IndexForm.Designer.cs">
+      <DependentUpon>IndexForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\InventorySummaryReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shared\InventorySummaryReportForm.Designer.cs">
+      <DependentUpon>InventorySummaryReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\MenuButtonUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shared\MenuButtonUI.Designer.cs">
+      <DependentUpon>MenuButtonUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\PrintPreviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shared\PrintPreviewForm.Designer.cs">
+      <DependentUpon>PrintPreviewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\ReportGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shared\ReportGroupForm.Designer.cs">
+      <DependentUpon>ReportGroupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\ReturnTransactionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shared\ReturnTransactionForm.Designer.cs">
+      <DependentUpon>ReturnTransactionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\EnterRemarksForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shared\EnterRemarksForm.Designer.cs">
+      <DependentUpon>EnterRemarksForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\PriceInquiryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shared\PriceInquiryForm.Designer.cs">
+      <DependentUpon>PriceInquiryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\SalesSummaryReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shared\SalesSummaryReportForm.Designer.cs">
+      <DependentUpon>SalesSummaryReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\SearchItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shared\SearchItemForm.Designer.cs">
+      <DependentUpon>SearchItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\SelectCategoryOrSupplierUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shared\SelectCategoryOrSupplierUI.Designer.cs">
+      <DependentUpon>SelectCategoryOrSupplierUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Supplier\AddEditSupplierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Supplier\AddEditSupplierForm.Designer.cs">
+      <DependentUpon>AddEditSupplierForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier\SupplierListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Supplier\SupplierListForm.Designer.cs">
+      <DependentUpon>SupplierListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\PurchaseOrder\POReturnDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\PurchaseOrder\POReturnDetailForm.Designer.cs">
+      <DependentUpon>POReturnDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\PurchaseOrder\PurchaseOrderEntryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\PurchaseOrder\PurchaseOrderEntryForm.Designer.cs">
+      <DependentUpon>PurchaseOrderEntryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\PurchaseOrder\PurchaseOrderHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\PurchaseOrder\PurchaseOrderHistoryForm.Designer.cs">
+      <DependentUpon>PurchaseOrderHistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\PurchaseOrder\PoReturnItemsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\PurchaseOrder\PoReturnItemsForm.Designer.cs">
+      <DependentUpon>PoReturnItemsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\PurchaseOrder\PoDetailListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\PurchaseOrder\PoDetailListForm.Designer.cs">
+      <DependentUpon>PoDetailListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\PurchaseOrder\PoReturnHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\PurchaseOrder\PoReturnHistoryForm.Designer.cs">
+      <DependentUpon>PoReturnHistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\PurchaseOrder\PoReturnViewDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\PurchaseOrder\PoReturnViewDetailForm.Designer.cs">
+      <DependentUpon>PoReturnViewDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\PurchaseOrder\PurchaseOrderPerSupplierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\PurchaseOrder\PurchaseOrderPerSupplierForm.Designer.cs">
+      <DependentUpon>PurchaseOrderPerSupplierForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\PurchaseOrder\PurchaseOrderViewDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\PurchaseOrder\PurchaseOrderViewDetailForm.Designer.cs">
+      <DependentUpon>PurchaseOrderViewDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\SalesInvoice\SalesInvoiceDetailListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\SalesInvoice\SalesInvoiceDetailListForm.Designer.cs">
+      <DependentUpon>SalesInvoiceDetailListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\SalesInvoice\SalesInvoiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\SalesInvoice\SalesInvoiceForm.Designer.cs">
+      <DependentUpon>SalesInvoiceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\SalesInvoice\SalesInvoiceHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\SalesInvoice\SalesInvoiceHistoryForm.Designer.cs">
+      <DependentUpon>SalesInvoiceHistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\SalesInvoice\SalesInvoicePerCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\SalesInvoice\SalesInvoicePerCustomerForm.Designer.cs">
+      <DependentUpon>SalesInvoicePerCustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\SalesInvoice\SalesInvoiceViewDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\SalesInvoice\SalesInvoiceViewDetailForm.Designer.cs">
+      <DependentUpon>SalesInvoiceViewDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\SalesInvoice\SalesReturnDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\SalesInvoice\SalesReturnDetailForm.Designer.cs">
+      <DependentUpon>SalesReturnDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\SalesInvoice\SalesReturnHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\SalesInvoice\SalesReturnHistoryForm.Designer.cs">
+      <DependentUpon>SalesReturnHistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\SalesInvoice\SalesReturnItemsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\SalesInvoice\SalesReturnItemsForm.Designer.cs">
+      <DependentUpon>SalesReturnItemsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transaction\SalesInvoice\SalesReturnViewDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transaction\SalesInvoice\SalesReturnViewDetailForm.Designer.cs">
+      <DependentUpon>SalesReturnViewDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\AddEditUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\AddEditUserForm.Designer.cs">
+      <DependentUpon>AddEditUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\ChangePasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\ChangePasswordForm.Designer.cs">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\MyAccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\MyAccountForm.Designer.cs">
+      <DependentUpon>MyAccountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserActivityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\UserActivityForm.Designer.cs">
+      <DependentUpon>UserActivityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\UserListForm.Designer.cs">
+      <DependentUpon>UserListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserLogInForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\UserLogInForm.Designer.cs">
+      <DependentUpon>UserLogInForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserRoleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\UserRoleForm.Designer.cs">
+      <DependentUpon>UserRoleForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Categories\AddEditCategoryForm.resx">
+      <DependentUpon>AddEditCategoryForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Categories\CategoryListForm.resx">
+      <DependentUpon>CategoryListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\AddEditCustomerForm.resx">
+      <DependentUpon>AddEditCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\CustomerListForm.resx">
+      <DependentUpon>CustomerListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\AddEditItemForm.resx">
+      <DependentUpon>AddEditItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\ChangePriceForm.resx">
+      <DependentUpon>ChangePriceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\ChangePriceHistoryForm.resx">
+      <DependentUpon>ChangePriceHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\ItemTransactionHistoryForm.resx">
+      <DependentUpon>ItemTransactionHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\ItemListForm.resx">
+      <DependentUpon>ItemListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items\UpdateMinimumStockForm.resx">
+      <DependentUpon>UpdateMinimumStockForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reports\DailySalesInvoiceReport.rdlc" />
+    <EmbeddedResource Include="Reports\DailyInventorySummaryReport.rdlc" />
+    <EmbeddedResource Include="Reports\EndingInventoryByCategoryReport.rdlc" />
+    <EmbeddedResource Include="Reports\EndingInventoryWithPricesReport.rdlc" />
+    <EmbeddedResource Include="Reports\EndingInventoryReport.rdlc" />
+    <EmbeddedResource Include="Reports\InventorySummaryReport.rdlc" />
+    <EmbeddedResource Include="Reports\ItemStockReport.rdlc" />
+    <EmbeddedResource Include="Reports\SalesIncomeReport.rdlc" />
+    <EmbeddedResource Include="Reports\SupplierHistorySummaryReport.rdlc" />
+    <EmbeddedResource Include="Reports\SalesInvoicePerCustomerSummaryReport.rdlc" />
+    <EmbeddedResource Include="Reports\ItemSalesReport.rdlc" />
+    <EmbeddedResource Include="Reports\SubReports\PurchaseOrderSubReport.rdlc" />
+    <EmbeddedResource Include="Reports\SubReports\SalesInvoiceSubReport.rdlc" />
+    <EmbeddedResource Include="Reports\DailySalesInvoiceSummaryReport.rdlc" />
+    <EmbeddedResource Include="Reports\SubReports\TotalSalesSubReport.rdlc" />
+    <EmbeddedResource Include="Reports\TransactionFrequencyGraphReport.rdlc" />
+    <EmbeddedResource Include="Shared\DashboardForm.resx">
+      <DependentUpon>DashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shared\DatabaseServerForm.resx">
+      <DependentUpon>DatabaseServerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shared\DateRangeForm.resx">
+      <DependentUpon>DateRangeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shared\FrequencyGraphUI.resx">
+      <DependentUpon>FrequencyGraphUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shared\IndexForm.resx">
+      <DependentUpon>IndexForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shared\InventorySummaryReportForm.resx">
+      <DependentUpon>InventorySummaryReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shared\MenuButtonUI.resx">
+      <DependentUpon>MenuButtonUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shared\PrintPreviewForm.resx">
+      <DependentUpon>PrintPreviewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shared\ReportGroupForm.resx">
+      <DependentUpon>ReportGroupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shared\ReturnTransactionForm.resx">
+      <DependentUpon>ReturnTransactionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shared\EnterRemarksForm.resx">
+      <DependentUpon>EnterRemarksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shared\PriceInquiryForm.resx">
+      <DependentUpon>PriceInquiryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shared\SalesSummaryReportForm.resx">
+      <DependentUpon>SalesSummaryReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shared\SearchItemForm.resx">
+      <DependentUpon>SearchItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shared\SelectCategoryOrSupplierUI.resx">
+      <DependentUpon>SelectCategoryOrSupplierUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Supplier\AddEditSupplierForm.resx">
+      <DependentUpon>AddEditSupplierForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Supplier\SupplierListForm.resx">
+      <DependentUpon>SupplierListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\PurchaseOrder\POReturnDetailForm.resx">
+      <DependentUpon>POReturnDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\PurchaseOrder\PurchaseOrderEntryForm.resx">
+      <DependentUpon>PurchaseOrderEntryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\PurchaseOrder\PurchaseOrderHistoryForm.resx">
+      <DependentUpon>PurchaseOrderHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\PurchaseOrder\PoReturnItemsForm.resx">
+      <DependentUpon>PoReturnItemsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\PurchaseOrder\PoDetailListForm.resx">
+      <DependentUpon>PoDetailListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\PurchaseOrder\PoReturnHistoryForm.resx">
+      <DependentUpon>PoReturnHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\PurchaseOrder\PoReturnViewDetailForm.resx">
+      <DependentUpon>PoReturnViewDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\PurchaseOrder\PurchaseOrderPerSupplierForm.resx">
+      <DependentUpon>PurchaseOrderPerSupplierForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\PurchaseOrder\PurchaseOrderViewDetailForm.resx">
+      <DependentUpon>PurchaseOrderViewDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\SalesInvoice\SalesInvoiceDetailListForm.resx">
+      <DependentUpon>SalesInvoiceDetailListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\SalesInvoice\SalesInvoiceForm.resx">
+      <DependentUpon>SalesInvoiceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\SalesInvoice\SalesInvoiceHistoryForm.resx">
+      <DependentUpon>SalesInvoiceHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\SalesInvoice\SalesInvoicePerCustomerForm.resx">
+      <DependentUpon>SalesInvoicePerCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\SalesInvoice\SalesInvoiceViewDetailForm.resx">
+      <DependentUpon>SalesInvoiceViewDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\SalesInvoice\SalesReturnDetailForm.resx">
+      <DependentUpon>SalesReturnDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\SalesInvoice\SalesReturnHistoryForm.resx">
+      <DependentUpon>SalesReturnHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\SalesInvoice\SalesReturnItemsForm.resx">
+      <DependentUpon>SalesReturnItemsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transaction\SalesInvoice\SalesReturnViewDetailForm.resx">
+      <DependentUpon>SalesReturnViewDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\AddEditUserForm.resx">
+      <DependentUpon>AddEditUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\ChangePasswordForm.resx">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\MyAccountForm.resx">
+      <DependentUpon>MyAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\UserActivityForm.resx">
+      <DependentUpon>UserActivityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\UserListForm.resx">
+      <DependentUpon>UserListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\UserLogInForm.resx">
+      <DependentUpon>UserLogInForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\UserRoleForm.resx">
+      <DependentUpon>UserRoleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\CommonLibrary.Dtos.CategoryDtos.datasource" />
+    <None Include="Properties\DataSources\CommonLibrary.Dtos.CustomerDtos.datasource" />
+    <None Include="Properties\DataSources\CommonLibrary.Dtos.DateRangeDtos.datasource" />
+    <None Include="Properties\DataSources\CommonLibrary.Dtos.InventorySummaryDetailDtos.datasource" />
+    <None Include="Properties\DataSources\CommonLibrary.Dtos.InventorySummaryDtos.datasource" />
+    <None Include="Properties\DataSources\CommonLibrary.Dtos.ItemDtos.datasource" />
+    <None Include="Properties\DataSources\CommonLibrary.Dtos.ItemPriceDtos.datasource" />
+    <None Include="Properties\DataSources\CommonLibrary.Dtos.PurchaseOrderDetailDtos.datasource" />
+    <None Include="Properties\DataSources\CommonLibrary.Dtos.PurchaseOrderDtos.datasource" />
+    <None Include="Properties\DataSources\CommonLibrary.Dtos.PurchaseOrderReturnDetailDtos.datasource" />
+    <None Include="Properties\DataSources\CommonLibrary.Dtos.PurchaseOrderReturnDtos.datasource" />
+    <None Include="Properties\DataSources\CommonLibrary.Dtos.SalesIncomeDetailDtos.datasource" />
+    <None Include="Properties\DataSources\CommonLibrary.Dtos.SalesIncomeDtos.datasource" />
+    <None Include="Properties\DataSources\CommonLibrary.Dtos.SalesInvoiceDetailDtos.datasource" />
+    <None Include="Properties\DataSources\CommonLibrary.Dtos.SalesInvoiceDtos.datasource" />
+    <None Include="Properties\DataSources\CommonLibrary.Dtos.SalesReturnDetailDtos.datasource" />
+    <None Include="Properties\DataSources\CommonLibrary.Dtos.SalesReturnDtos.datasource" />
+    <None Include="Properties\DataSources\CommonLibrary.Dtos.SalesSummaryDetailDtos.datasource" />
+    <None Include="Properties\DataSources\CommonLibrary.Dtos.SalesSummaryDtos.datasource" />
+    <None Include="Properties\DataSources\CommonLibrary.Dtos.SupplierDtos.datasource" />
+    <None Include="Properties\DataSources\CommonLibrary.Dtos.TotalIncomeDetailDtos.datasource" />
+    <None Include="Properties\DataSources\CommonLibrary.Dtos.TotalIncomeDtos.datasource" />
+    <None Include="Properties\DataSources\CommonLibrary.Dtos.TransactionFrequencyDtos.datasource" />
+    <None Include="Properties\DataSources\CommonLibrary.Services.ExcelDb.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonLibrary\CommonLibrary.csproj">
+      <Project>{cab35307-7423-4470-96f8-05e41b52e00b}</Project>
+      <Name>CommonLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
+      <Project>{36d477a7-ea37-42c6-8c0c-714ec90ad453}</Project>
+      <Name>Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InventoryServices\InventoryServices.csproj">
+      <Project>{7d311e9a-2150-4b18-807b-8c090a9420df}</Project>
+      <Name>InventoryServices</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\change-price-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\confirm-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\item-history-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\history-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\return-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\return-transaction-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-flat-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sales-invoice-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\po-order-2-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\current-stock-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graph-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dashboard-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\price-inquiry-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\purchase history.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sales invoice history.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sales-return-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\po-return-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\item-category-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enable-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reports-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\members-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-account-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\point-right_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-setting-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\supplier-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log-out-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inventory-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\change-password-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\access-privilege-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\main-reports-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\main-view-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\main-edit-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="inventory_yvh_icon.ico" />
+    <Content Include="Resources\LAAS.jpg" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="transworldlogo_ElL_1.ico" />
+    <Content Include="transworldlogo_j3Y_2.ico" />
+    <Content Include="transworldlogo_LX6_2.ico" />
+    <Content Include="transworldlogo_xpA_2.ico" />
+    <None Include="Resources\TRANS.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="EnvDTE">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>False</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="EnvDTE80">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>False</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Infragistics4.Shared.v19.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Infragistics4.Win.DataVisualization.Shared.v19.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Infragistics4.Win.DataVisualization.UltraDataChart.v19.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Infragistics4.Win.Misc.v19.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Infragistics4.Win.Portable.Core.v19.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Infragistics4.Win.UltraWinChart.v19.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Infragistics4.Win.UltraWinEditors.v19.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Infragistics4.Win.UltraWinTabbedMdi.v19.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Infragistics4.Win.v19.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.MSXML">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.WinForms">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SqlServerCe.VersionManagement">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.ComponentModelHost">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.CoreUtility">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.Data.Core">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.Data.Framework">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.Data.Services">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.DataDesign.Interfaces">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.DataDesign.WpfDataTool">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.Debugger.InteropA">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.Designer.Interfaces">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.Editor">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.ExtensibilityHosting">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.Language.Intellisense">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.ManagedInterfaces">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.OLE.Interop">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.Package.LanguageService.10.0">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.ProjectAggregator">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.Settings">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.Shell.10.0">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.Shell.Design">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.Shell.Immutable.10.0">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.Shell.Interop">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.Shell.Interop.10.0">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.Shell.Interop.8.0">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.Shell.Interop.9.0">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.TemplateWizardInterface">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.Text.Data">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.Text.Logic">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.Text.UI">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.Text.UI.Wpf">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.TextManager.Interop">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.TextManager.Interop.10.0">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.TextManager.Interop.8.0">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.VSHelp">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.WCFReference.Interop">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VisualStudio.WizardFramework">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VSDesigner">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.VSDesigner.ExceptionAssistant.SmartTag">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Windows.Design.Host">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Windows.Design.Markup">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Windows.Design.Platform">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="stdole">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="VSLangProj">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="VSLangProj2">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="VSLangProj80">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

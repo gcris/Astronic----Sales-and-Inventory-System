@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7D311E9A-2150-4B18-807B-8C090A9420DF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>InventoryServices</RootNamespace>
+    <AssemblyName>InventoryServices</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\InventorySummaryController.cs" />
+    <Compile Include="Controllers\ItemController.cs" />
+    <Compile Include="Controllers\ItemPriceController.cs" />
+    <Compile Include="Controllers\PurchaseOrderController.cs" />
+    <Compile Include="Controllers\SalesInvoiceController.cs" />
+    <Compile Include="Controllers\PurchaseOrderReturnController.cs" />
+    <Compile Include="Controllers\SalesReturnController.cs" />
+    <Compile Include="Controllers\SupplierController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="EventMessenger\NotifierEventMessenger.cs" />
+    <Compile Include="ExtensionMethods\DateTimeExtension.cs" />
+    <Compile Include="ExtensionMethods\ObjectMappingExtension.cs" />
+    <Compile Include="Interfaces\ICategoryRepository.cs" />
+    <Compile Include="Interfaces\ICryptologyRepository.cs" />
+    <Compile Include="Interfaces\ICustomerRepository.cs" />
+    <Compile Include="Interfaces\IInventoryRepository.cs" />
+    <Compile Include="Interfaces\IItemPriceRepository.cs" />
+    <Compile Include="Interfaces\IItemRepository.cs" />
+    <Compile Include="Interfaces\IPurchaseOrderRepository.cs" />
+    <Compile Include="Interfaces\ISalesInvoiceRepository.cs" />
+    <Compile Include="Interfaces\IPurchaseOrderReturnRepository.cs" />
+    <Compile Include="Interfaces\ISalesReturnRepository.cs" />
+    <Compile Include="Interfaces\ISupplierRepository.cs" />
+    <Compile Include="Interfaces\IUserRepository.cs" />
+    <Compile Include="InventoryDbContext.cs" />
+    <Compile Include="Migrations\201810181152340_Add-Item-and-Category.cs" />
+    <Compile Include="Migrations\201810181152340_Add-Item-and-Category.Designer.cs">
+      <DependentUpon>201810181152340_Add-Item-and-Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810181324447_Update-Item.cs" />
+    <Compile Include="Migrations\201810181324447_Update-Item.Designer.cs">
+      <DependentUpon>201810181324447_Update-Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810200234011_Update-Caterogy-add-LastUpdate.cs" />
+    <Compile Include="Migrations\201810200234011_Update-Caterogy-add-LastUpdate.Designer.cs">
+      <DependentUpon>201810200234011_Update-Caterogy-add-LastUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810200240227_Add-ItemPrice.cs" />
+    <Compile Include="Migrations\201810200240227_Add-ItemPrice.Designer.cs">
+      <DependentUpon>201810200240227_Add-ItemPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810200604289_Update-ItemPrice.cs" />
+    <Compile Include="Migrations\201810200604289_Update-ItemPrice.Designer.cs">
+      <DependentUpon>201810200604289_Update-ItemPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810211242040_Update-Items-include-OtherPartNo.cs" />
+    <Compile Include="Migrations\201810211242040_Update-Items-include-OtherPartNo.Designer.cs">
+      <DependentUpon>201810211242040_Update-Items-include-OtherPartNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810211246002_Update-Items-include-Prices.cs" />
+    <Compile Include="Migrations\201810211246002_Update-Items-include-Prices.Designer.cs">
+      <DependentUpon>201810211246002_Update-Items-include-Prices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810280821553_Add-Sales-Purchase-Model.cs" />
+    <Compile Include="Migrations\201810280821553_Add-Sales-Purchase-Model.Designer.cs">
+      <DependentUpon>201810280821553_Add-Sales-Purchase-Model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810291411365_Update-SalesInvoice-add-Returned.cs" />
+    <Compile Include="Migrations\201810291411365_Update-SalesInvoice-add-Returned.Designer.cs">
+      <DependentUpon>201810291411365_Update-SalesInvoice-add-Returned.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810301250532_Update-SalesReturn.cs" />
+    <Compile Include="Migrations\201810301250532_Update-SalesReturn.Designer.cs">
+      <DependentUpon>201810301250532_Update-SalesReturn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811010629446_Update-SalesInvoice-and-SalesReturn.cs" />
+    <Compile Include="Migrations\201811010629446_Update-SalesInvoice-and-SalesReturn.Designer.cs">
+      <DependentUpon>201811010629446_Update-SalesInvoice-and-SalesReturn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811011725438_Update-SalesReturn-add-TotalAmount.cs" />
+    <Compile Include="Migrations\201811011725438_Update-SalesReturn-add-TotalAmount.Designer.cs">
+      <DependentUpon>201811011725438_Update-SalesReturn-add-TotalAmount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811021236071_Update-SalesReturn-and-SalesInvoice.cs" />
+    <Compile Include="Migrations\201811021236071_Update-SalesReturn-and-SalesInvoice.Designer.cs">
+      <DependentUpon>201811021236071_Update-SalesReturn-and-SalesInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811041138015_Update-SalesInvoice-Allowcustomertobenull.cs" />
+    <Compile Include="Migrations\201811041138015_Update-SalesInvoice-Allowcustomertobenull.Designer.cs">
+      <DependentUpon>201811041138015_Update-SalesInvoice-Allowcustomertobenull.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811050909071_Update-PurchaseOrder-AddTotalQuantity.cs" />
+    <Compile Include="Migrations\201811050909071_Update-PurchaseOrder-AddTotalQuantity.Designer.cs">
+      <DependentUpon>201811050909071_Update-PurchaseOrder-AddTotalQuantity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811060555341_Add-PurchaseOrderReturn.cs" />
+    <Compile Include="Migrations\201811060555341_Add-PurchaseOrderReturn.Designer.cs">
+      <DependentUpon>201811060555341_Add-PurchaseOrderReturn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811110758531_Update-CategoryandItem-include-MinimumStock.cs" />
+    <Compile Include="Migrations\201811110758531_Update-CategoryandItem-include-MinimumStock.Designer.cs">
+      <DependentUpon>201811110758531_Update-CategoryandItem-include-MinimumStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811130902458_Update-Item-include-add-Supplier.cs" />
+    <Compile Include="Migrations\201811130902458_Update-Item-include-add-Supplier.Designer.cs">
+      <DependentUpon>201811130902458_Update-Item-include-add-Supplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811150301470_Update-SalesInvoice-includeallprices.cs" />
+    <Compile Include="Migrations\201811150301470_Update-SalesInvoice-includeallprices.Designer.cs">
+      <DependentUpon>201811150301470_Update-SalesInvoice-includeallprices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812020906151_Add-InventorySummary.cs" />
+    <Compile Include="Migrations\201812020906151_Add-InventorySummary.Designer.cs">
+      <DependentUpon>201812020906151_Add-InventorySummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812090344321_Add-User-and-UserRole.cs" />
+    <Compile Include="Migrations\201812090344321_Add-User-and-UserRole.Designer.cs">
+      <DependentUpon>201812090344321_Add-User-and-UserRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812091138488_Update-Transactions-add-User.cs" />
+    <Compile Include="Migrations\201812091138488_Update-Transactions-add-User.Designer.cs">
+      <DependentUpon>201812091138488_Update-Transactions-add-User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812091745108_Add-UserActivity.cs" />
+    <Compile Include="Migrations\201812091745108_Add-UserActivity.Designer.cs">
+      <DependentUpon>201812091745108_Add-UserActivity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812190315173_Add-Remarks-to-SalesInvoice-and-PurchaseOrder.cs" />
+    <Compile Include="Migrations\201812190315173_Add-Remarks-to-SalesInvoice-and-PurchaseOrder.Designer.cs">
+      <DependentUpon>201812190315173_Add-Remarks-to-SalesInvoice-and-PurchaseOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812190414207_Update-Transaction-Include-CurrentStock.cs" />
+    <Compile Include="Migrations\201812190414207_Update-Transaction-Include-CurrentStock.Designer.cs">
+      <DependentUpon>201812190414207_Update-Transaction-Include-CurrentStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812240358460_include-discount.cs" />
+    <Compile Include="Migrations\201812240358460_include-discount.Designer.cs">
+      <DependentUpon>201812240358460_include-discount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812300334228_Update-Activities.cs" />
+    <Compile Include="Migrations\201812300334228_Update-Activities.Designer.cs">
+      <DependentUpon>201812300334228_Update-Activities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901130301145_Update-UnitOfMeasure.cs" />
+    <Compile Include="Migrations\201901130301145_Update-UnitOfMeasure.Designer.cs">
+      <DependentUpon>201901130301145_Update-UnitOfMeasure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\InventorySummary.cs" />
+    <Compile Include="Models\InventorySummaryDetail.cs" />
+    <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\ItemPrice.cs" />
+    <Compile Include="Models\PasswordHistory.cs" />
+    <Compile Include="Models\PurchaseOrder.cs" />
+    <Compile Include="Models\PurchaseOrderDetail.cs" />
+    <Compile Include="Models\PurchaseOrderReturn.cs" />
+    <Compile Include="Models\PurchaseOrderReturnDetail.cs" />
+    <Compile Include="Models\SalesInvoice.cs" />
+    <Compile Include="Models\SalesInvoiceDetail.cs" />
+    <Compile Include="Models\SalesReturn.cs" />
+    <Compile Include="Models\SalesReturnDetail.cs" />
+    <Compile Include="Models\Supplier.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserActivity.cs" />
+    <Compile Include="Models\UserPrivilege.cs" />
+    <Compile Include="Models\UserRole.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CategoryRepository.cs" />
+    <Compile Include="Repositories\CryptologyRepository.cs" />
+    <Compile Include="Repositories\CustomerRepository.cs" />
+    <Compile Include="Repositories\InventoryRepository.cs" />
+    <Compile Include="Repositories\ItemPriceRepository.cs" />
+    <Compile Include="Repositories\ItemRepository.cs" />
+    <Compile Include="Repositories\PurchaseOrderRepository.cs" />
+    <Compile Include="Repositories\SalesInvoiceRepository.cs" />
+    <Compile Include="Repositories\PurchaseOrderReturnRepository.cs" />
+    <Compile Include="Repositories\SalesReturnRepository.cs" />
+    <Compile Include="Repositories\SqlDependencyNotification.cs" />
+    <Compile Include="Repositories\SupplierRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonLibrary\CommonLibrary.csproj">
+      <Project>{cab35307-7423-4470-96f8-05e41b52e00b}</Project>
+      <Name>CommonLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201810181152340_Add-Item-and-Category.resx">
+      <DependentUpon>201810181152340_Add-Item-and-Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810181324447_Update-Item.resx">
+      <DependentUpon>201810181324447_Update-Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810200234011_Update-Caterogy-add-LastUpdate.resx">
+      <DependentUpon>201810200234011_Update-Caterogy-add-LastUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810200240227_Add-ItemPrice.resx">
+      <DependentUpon>201810200240227_Add-ItemPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810200604289_Update-ItemPrice.resx">
+      <DependentUpon>201810200604289_Update-ItemPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810211242040_Update-Items-include-OtherPartNo.resx">
+      <DependentUpon>201810211242040_Update-Items-include-OtherPartNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810211246002_Update-Items-include-Prices.resx">
+      <DependentUpon>201810211246002_Update-Items-include-Prices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810280821553_Add-Sales-Purchase-Model.resx">
+      <DependentUpon>201810280821553_Add-Sales-Purchase-Model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810291411365_Update-SalesInvoice-add-Returned.resx">
+      <DependentUpon>201810291411365_Update-SalesInvoice-add-Returned.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810301250532_Update-SalesReturn.resx">
+      <DependentUpon>201810301250532_Update-SalesReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811010629446_Update-SalesInvoice-and-SalesReturn.resx">
+      <DependentUpon>201811010629446_Update-SalesInvoice-and-SalesReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811011725438_Update-SalesReturn-add-TotalAmount.resx">
+      <DependentUpon>201811011725438_Update-SalesReturn-add-TotalAmount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811021236071_Update-SalesReturn-and-SalesInvoice.resx">
+      <DependentUpon>201811021236071_Update-SalesReturn-and-SalesInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811041138015_Update-SalesInvoice-Allowcustomertobenull.resx">
+      <DependentUpon>201811041138015_Update-SalesInvoice-Allowcustomertobenull.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811050909071_Update-PurchaseOrder-AddTotalQuantity.resx">
+      <DependentUpon>201811050909071_Update-PurchaseOrder-AddTotalQuantity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811060555341_Add-PurchaseOrderReturn.resx">
+      <DependentUpon>201811060555341_Add-PurchaseOrderReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811110758531_Update-CategoryandItem-include-MinimumStock.resx">
+      <DependentUpon>201811110758531_Update-CategoryandItem-include-MinimumStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811130902458_Update-Item-include-add-Supplier.resx">
+      <DependentUpon>201811130902458_Update-Item-include-add-Supplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811150301470_Update-SalesInvoice-includeallprices.resx">
+      <DependentUpon>201811150301470_Update-SalesInvoice-includeallprices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812020906151_Add-InventorySummary.resx">
+      <DependentUpon>201812020906151_Add-InventorySummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812090344321_Add-User-and-UserRole.resx">
+      <DependentUpon>201812090344321_Add-User-and-UserRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812091138488_Update-Transactions-add-User.resx">
+      <DependentUpon>201812091138488_Update-Transactions-add-User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812091745108_Add-UserActivity.resx">
+      <DependentUpon>201812091745108_Add-UserActivity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812190315173_Add-Remarks-to-SalesInvoice-and-PurchaseOrder.resx">
+      <DependentUpon>201812190315173_Add-Remarks-to-SalesInvoice-and-PurchaseOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812190414207_Update-Transaction-Include-CurrentStock.resx">
+      <DependentUpon>201812190414207_Update-Transaction-Include-CurrentStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812240358460_include-discount.resx">
+      <DependentUpon>201812240358460_include-discount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812300334228_Update-Activities.resx">
+      <DependentUpon>201812300334228_Update-Activities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901130301145_Update-UnitOfMeasure.resx">
+      <DependentUpon>201901130301145_Update-UnitOfMeasure.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
